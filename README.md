@@ -10,8 +10,7 @@ Alles noch sehr viel detaillierter nachzulesen auf https://git-scm.com/book/de/v
 | $ git init                                            | Erzeugt ein Unterverzeichnis .git, in dem alle relevanten Git Repository Daten enthalten sind. |
 | $ git status                                          | Es zeigt euch die aktuelle Branch an, auf der ihr seid undden Zustand des Repository |
 | $ git add main.java / .                               | Um eine neue Datei zur Versionskontrolle hinzuzufügen, verwendest Du den Befehl git add.|
-| $ git commit -m "Story 182: Fix benchmarks for speed" | Legt ein Commit an, mit den Dateien zu dem Zeitpunkt an dem du sie geadded hast!!!!!
--m “text” ist eine schnell Version für die Commit Nachricht |
+| $ git commit -m "Story 182: Fix benchmarks for speed" | Legt ein Commit an, mit den Dateien zu dem Zeitpunkt an dem du sie geadded hast!!!!! -m “text” ist eine schnell Version für die Commit Nachricht |
 | $ git rm readme.txt                                   | löscht Datei aus dem Repository und von der Festplatte |
 | $ git rm --cached readme.txt                          | löscht Datei nur aus dem Repository ( kann danach wieder neu geadded werden) |
 | $ git log                                             | welche Änderungen wurden zuletzt vorgenommen (aktuellster commit steht oben) |
