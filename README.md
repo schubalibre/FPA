@@ -16,10 +16,6 @@ Alles noch sehr viel detaillierter nachzulesen auf https://git-scm.com/book/de/v
 | $ git rm --cached readme.txt                          | löscht Datei nur aus dem Repository ( kann danach wieder neu geadded werden) |
 | $ git log                                             | welche Änderungen wurden zuletzt vorgenommen (aktuellster commit steht oben) |
 | $ gitk                                                | grafische Anzeige der Commit Historie |
-| $ git commit --amend                                  | Wenn Du den letzten Commit korrigieren willst
-$ git commit -m 'initial commit'
-$ git add forgotten_file
-$ git commit --amend
-Diese drei Befehle legen einen einzigen neuen Commit an – der letzte Befehl ersetzt dabei das Ergebnis des ersten Befehls. |
+| $ git commit --amend                                  | Wenn Du den letzten Commit korrigieren willst $ git commit -m 'initial commit' $ git add forgotten_file $ git commit --amend Diese drei Befehle legen einen einzigen neuen Commit an – der letzte Befehl ersetzt dabei das Ergebnis des ersten Befehls. |
 | $ git reset HEAD file                                 | geaddete Dateien wieder aus dem Stage nehmen |
 | $ git checkout -- benchmarks.rb                       | um die Änderungen an der Datei zu verwerfen |                          
