@@ -1,0 +1,25 @@
+package de.bht.fpa.mail.s822248.fsnavigation;
+
+import javafx.scene.control.TreeView;
+
+import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.part.ViewPart;
+
+public class NavigationView  extends ViewPart{
+
+	@Override
+	public void createPartControl(Composite parent) {
+		TreeViewer viewer = new TreeViewer(parent);
+		viewer.setContentProvider(new NsNavigationContentProvider());
+		viewer.setLabelProvider(new FsNavigationLabl¡elProvider());
+		viewer.setInput();
+	}
+
+	@Override
+	public void setFocus() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

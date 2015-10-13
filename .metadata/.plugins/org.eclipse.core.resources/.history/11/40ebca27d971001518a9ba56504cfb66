@@ -1,0 +1,7 @@
+package de.bht.fpa.mail.s822248.fsnavigation;
+
+import org.eclipse.jface.viewers.LabelProvider;
+
+public class FsNavigationLabel extends LabelProvider{
+
+}

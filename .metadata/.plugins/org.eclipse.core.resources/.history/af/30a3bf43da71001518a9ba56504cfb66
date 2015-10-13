@@ -1,0 +1,18 @@
+package de.bht.fpa.mail.s822248.fsnavigation;
+
+import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.swt.graphics.Image;
+
+public class FsNavigationLabel extends LabelProvider{
+	@Override
+	public Image getImage(Object element) {
+		if(element instanceof IMess)
+		return super.getImage(element);
+	}
+	
+	@Override
+	public String getText(Object element) {
+		// TODO Auto-generated method stub
+		return super.getText(element);
+	}
+}
