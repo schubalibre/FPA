@@ -13,7 +13,7 @@ public class NavigationView extends ViewPart{
 		TreeViewer viewer = new TreeViewer(parent);
 		viewer.setContentProvider(new NsNavigationContentProvider());
 		viewer.setLabelProvider(new FsNavigationLabel());
-		viewer.setInput(new FolderItem(new File("user.homer")));
+		viewer.setInput(new FolderItem(new File(System.getProperty("user.home"))));
 	}
 
 	@Override

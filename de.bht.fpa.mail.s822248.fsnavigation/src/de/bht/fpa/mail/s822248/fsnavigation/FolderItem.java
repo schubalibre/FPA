@@ -12,19 +12,18 @@ public class FolderItem extends FileTreeItem {
 
 	public FolderItem(File file) {
 		super(file);
-		// TODO Auto-generated constructor stub
 	}
 	
 	@Override
 	public Image getImage() {
-		// TODO imges erstellen
-		return new Image(null, "img/folder.png");
+		return Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID,
+				"icons/folder.png").createImage();
 	}
 	
 	@Override
 	public boolean hasChildren() {
 		// TODO Auto-generated method stub
-		return file.list().length > 0;
+		return file.list() != null;
 	}
 	
 	@Override

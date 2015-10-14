@@ -1,6 +1,7 @@
 package de.bht.fpa.mail.s822248.fsnavigation;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.swt.graphics.Image;
@@ -24,26 +25,22 @@ public abstract class FileTreeItem implements IMessageTreeItem {
 
 	@Override
 	public Image getImage() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public boolean hasChildren() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public List<IMessageTreeItem> getChildren() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Message> getMessages() {
-		// TODO Auto-generated method stub
-		return null;
+		return new ArrayList<Message>();
 	}
 	
 

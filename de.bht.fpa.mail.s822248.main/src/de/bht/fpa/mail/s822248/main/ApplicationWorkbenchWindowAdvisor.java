@@ -18,9 +18,9 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
     
     public void preWindowOpen() {
         IWorkbenchWindowConfigurer configurer = getWindowConfigurer();
-        configurer.setInitialSize(new Point(800, 600));
+        configurer.setInitialSize(new Point(630, 480));
         configurer.setShowCoolBar(false);
         configurer.setShowStatusLine(false);
-        configurer.setTitle("UnicornMailer"); //$NON-NLS-1$
+        configurer.setTitle("EMailer"); //$NON-NLS-1$
     }
 }

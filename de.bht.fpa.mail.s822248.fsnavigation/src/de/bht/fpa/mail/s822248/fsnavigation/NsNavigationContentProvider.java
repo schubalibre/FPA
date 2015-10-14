@@ -15,13 +15,11 @@ public class NsNavigationContentProvider implements ITreeContentProvider {
 
 	@Override
 	public Object[] getElements(Object inputElement) {
-		// TODO Root
-		return ((FileTreeItem) inputElement).getChildren().toArray();
+		return getChildren(inputElement);
 	}
 
 	@Override
 	public Object[] getChildren(Object parentElement) {
-		// TODO Children
 		return ((FileTreeItem) parentElement).getChildren().toArray();
 	}
 
@@ -32,7 +30,6 @@ public class NsNavigationContentProvider implements ITreeContentProvider {
 
 	@Override
 	public boolean hasChildren(Object element) {
-		// TODO hasChilderen
 		return ((FileTreeItem) element).hasChildren();
 	}
 
