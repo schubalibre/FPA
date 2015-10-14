@@ -6,16 +6,16 @@
       <view
             class="de.bht.fpa.mail.s822248.fsnavigation.NavigationView"
             id="de.bht.fpa.mail.s822248.fsnavigation.view1"
-            name="name"
+            name="NavigationView"
             restorable="true">
       </view>
    </extension>
    <extension
          point="org.eclipse.ui.perspectives">
       <perspective
-            class="de.bht.fpa.mail.s822248.fsnavigation.PerspectiveFactory1"
+            class="de.bht.fpa.mail.s822248.fsnavigation.NavigationPerspective"
             id="de.bht.fpa.mail.s822248.fsnavigation.perspective1"
-            name="name">
+            name="NavPerspective">
       </perspective>
    </extension>
 

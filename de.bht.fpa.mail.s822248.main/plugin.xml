@@ -19,5 +19,23 @@
             id="de.bht.fpa.mail.s822248.main.perspective">
       </perspective>
    </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="de.bht.fpa.mail.s822248.fsnavigation.NavigationView"
+            id="de.bht.fpa.mail.s822248.fsnavigation.view1"
+            name="NavigationView"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="de.bht.fpa.mail.s822248.main.ViewPart2"
+            id="de.bht.fpa.mail.s822248.main.view2"
+            name="name1"
+            restorable="true">
+      </view>
+   </extension>
 
 </plugin>
