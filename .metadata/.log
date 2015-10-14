@@ -642,3 +642,12 @@ java.lang.NullPointerException
 
 !ENTRY org.eclipse.core.filesystem 4 272 2015-10-13 23:43:50.241
 !MESSAGE Could not write file: /home/roberto/Documents/FPA/java/.metadata/.plugins/org.eclipse.debug.core/.launches.
+
+!ENTRY org.eclipse.ui 4 4 2015-10-14 08:26:44.085
+!MESSAGE Conflicting handlers for org.eclipse.ui.file.print: {ActionHandler(org.eclipse.ui.texteditor.TextOperationAction@24bec96e)} vs {ActionHandler(org.eclipse.ui.texteditor.AbstractDecoratedTextEditor$12@744fe3c7)}
+
+!ENTRY org.eclipse.ui 4 4 2015-10-14 08:26:44.086
+!MESSAGE Conflicting handlers for org.eclipse.ui.file.print: {ActionHandler(org.eclipse.ui.texteditor.TextOperationAction@24bec96e)} vs {ActionHandler(org.eclipse.ui.texteditor.AbstractDecoratedTextEditor$12@744fe3c7)}
+
+!ENTRY org.eclipse.ui 4 4 2015-10-14 08:27:38.550
+!MESSAGE Conflicting handlers for org.eclipse.ui.file.print: {ActionHandler(org.eclipse.ui.texteditor.TextOperationAction@24bec96e)} vs {ActionHandler(org.eclipse.ui.texteditor.AbstractDecoratedTextEditor$12@744fe3c7)}
