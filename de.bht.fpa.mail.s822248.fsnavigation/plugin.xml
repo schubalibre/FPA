@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="de.bht.fpa.mail.s822248.fsnavigation.NavigationView"
+            id="de.bht.fpa.mail.s822248.fsnavigation.view1"
+            name="name"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="de.bht.fpa.mail.s822248.fsnavigation.PerspectiveFactory1"
+            id="de.bht.fpa.mail.s822248.fsnavigation.perspective1"
+            name="name">
+      </perspective>
+   </extension>
+
+</plugin>

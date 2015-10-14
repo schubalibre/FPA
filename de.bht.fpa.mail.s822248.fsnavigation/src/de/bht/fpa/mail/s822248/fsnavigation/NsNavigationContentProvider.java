@@ -1,6 +1,5 @@
 package de.bht.fpa.mail.s822248.fsnavigation;
 
-import org.eclipse.jface.viewers.IContentProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
@@ -17,13 +16,13 @@ public class NsNavigationContentProvider implements ITreeContentProvider {
 	@Override
 	public Object[] getElements(Object inputElement) {
 		// TODO Root
-		return null;
+		return ((FileTreeItem) inputElement).getChildren().toArray();
 	}
 
 	@Override
 	public Object[] getChildren(Object parentElement) {
-		// TODO Chilrden
-		return null;
+		// TODO Children
+		return ((FileTreeItem) parentElement).getChildren().toArray();
 	}
 
 	@Override
@@ -34,7 +33,7 @@ public class NsNavigationContentProvider implements ITreeContentProvider {
 	@Override
 	public boolean hasChildren(Object element) {
 		// TODO hasChilderen
-		return false;
+		return ((FileTreeItem) element).hasChildren();
 	}
 
 }

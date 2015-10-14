@@ -1,5 +1,6 @@
 package de.bht.fpa.mail.s822248.fsnavigation;
 
+import java.io.File;
 import java.util.List;
 
 import org.eclipse.swt.graphics.Image;
@@ -9,11 +10,16 @@ import de.bht.fpa.mail.s000000.common.mail.model.Message;
 
 
 public abstract class FileTreeItem implements IMessageTreeItem {
+	
+	protected final File file;
+
+	public FileTreeItem(File file) {
+		this.file = file;
+	}
 
 	@Override
 	public String getText() {
-		// TODO Auto-generated method stub
-		return null;
+		return file.getName();
 	}
 
 	@Override

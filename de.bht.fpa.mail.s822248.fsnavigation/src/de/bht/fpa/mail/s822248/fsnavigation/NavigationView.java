@@ -6,7 +6,7 @@ import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.part.ViewPart;
 
-public class NavigationView  extends ViewPart{
+public class NavigationView extends ViewPart{
 
 	@Override
 	public void createPartControl(Composite parent) {
