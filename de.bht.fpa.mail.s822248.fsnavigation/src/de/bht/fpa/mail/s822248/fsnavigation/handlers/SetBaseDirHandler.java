@@ -1,13 +1,18 @@
 package de.bht.fpa.mail.s822248.fsnavigation.handlers;
 
-
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.preferences.ConfigurationScope;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
+import org.eclipse.core.runtime.preferences.IPreferencesService;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.swt.widgets.DirectoryDialog;
+import org.osgi.service.prefs.BackingStoreException;
+import org.osgi.service.prefs.Preferences;
+
 
 /**
  * Our sample handler extends AbstractHandler, an IHandler base class.
@@ -32,8 +37,32 @@ public class SetBaseDirHandler extends AbstractHandler {
 		dlg.setMessage("Choose new base directory");
 		FileObservable file = FileObservable.getInstance();
 		file.setPath(dlg.open());
+
+		Preferences prefs = getPrefs();
+		prefs.put("baseDirectory", file.getPath());
 		
+		try {
+			prefs.put( prefs.keys().length + "", file.getPath());
+		} catch (BackingStoreException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		try {
+			prefs.flush();
+		} catch (org.osgi.service.prefs.BackingStoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		return null;
 	}
+	
+	public static Preferences getPrefs() {
+        IPreferencesService service = Platform.getPreferencesService();
+        IEclipsePreferences root = service.getRootNode();
+        Preferences prefs = root.node(ConfigurationScope.SCOPE).node("de.bht.fpa.mail.s822248.fsnavigation.view1");
+        return prefs;
+    }
 
 }
