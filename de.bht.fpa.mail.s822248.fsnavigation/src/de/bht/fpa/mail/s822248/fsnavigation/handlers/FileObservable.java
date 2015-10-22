@@ -16,8 +16,6 @@ public class FileObservable extends Observable {
 		if(fileObservable == null) fileObservable= new FileObservable();
 		return fileObservable;
 	}
-	
-
 
 	public void setPath(String path){
 		setChanged();
@@ -25,8 +23,6 @@ public class FileObservable extends Observable {
 		this.path = path;
 	}
 	
-
-
 	public String getPath(){
 		return path;
 	}

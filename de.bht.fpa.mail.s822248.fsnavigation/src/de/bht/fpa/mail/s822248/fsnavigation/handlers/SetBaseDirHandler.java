@@ -1,8 +1,10 @@
 package de.bht.fpa.mail.s822248.fsnavigation.handlers;
 
+
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.swt.widgets.DirectoryDialog;
@@ -33,4 +35,5 @@ public class SetBaseDirHandler extends AbstractHandler {
 		
 		return null;
 	}
+
 }
