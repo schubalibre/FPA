@@ -24,7 +24,7 @@
       </command>
       <command
             categoryId="de.bht.fpa.mail.s822248.fsnavigation.commands.category"
-            id="de.bht.fpa.mail.s822248.fsnavigation.command1"
+            id="de.bht.fpa.mail.s822248.fsnavigation.commands.sampleCommand2"
             name="History">
       </command>
    </extension>
@@ -36,7 +36,7 @@
       </handler>
       <handler
             class="de.bht.fpa.mail.s822248.fsnavigation.handlers.SetHistoryDirHandler"
-            commandId="de.bht.fpa.mail.s822248.fsnavigation.sampleCommand1">
+            commandId="de.bht.fpa.mail.s822248.fsnavigation.commands.sampleCommand2">
       </handler>
    </extension>
    <extension
@@ -57,9 +57,9 @@
                label="FS Navigation"
                mnemonic="M">
             <command
-                  commandId="de.bht.fpa.mail.s822248.fsnavigation.command1"
-                  id="de.bht.fpa.mail.s822248.fsnavigation.menus.sampleCommand"
-                  mnemonic="S">
+                  commandId="de.bht.fpa.mail.s822248.fsnavigation.commands.sampleCommand2"
+                  id="de.bht.fpa.mail.s822248.fsnavigation.sampleCommand2"
+                  style="push">
             </command>
             <command
                   commandId="de.bht.fpa.mail.s822248.fsnavigation.commands.sampleCommand"

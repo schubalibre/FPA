@@ -35,24 +35,22 @@ public class SetBaseDirHandler extends AbstractHandler {
 		
 		DirectoryDialog dlg = new DirectoryDialog(window.getShell());
 		dlg.setMessage("Choose new base directory");
+		
 		FileObservable file = FileObservable.getInstance();
+		// TODO sollte FileObservable vielleicht eine Exception schmeißen wenn dlg.open() nichts zurück gibt?
 		file.setPath(dlg.open());
-
-		Preferences prefs = getPrefs();
-		prefs.put("baseDirectory", file.getPath());
 		
-		try {
-			prefs.put( prefs.keys().length + "", file.getPath());
-		} catch (BackingStoreException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
-		try {
-			prefs.flush();
-		} catch (org.osgi.service.prefs.BackingStoreException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(file.getPath() != null){
+			Preferences prefs = getPrefs();
+			prefs.put("baseDirectory", file.getPath());
+			
+			try {
+				prefs.put( prefs.keys().length + "", file.getPath());
+				prefs.flush();
+			} catch (BackingStoreException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
 		}
 
 		return null;
