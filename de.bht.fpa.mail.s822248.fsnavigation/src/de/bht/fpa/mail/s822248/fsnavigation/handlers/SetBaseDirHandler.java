@@ -42,7 +42,6 @@ public class SetBaseDirHandler extends AbstractHandler {
 		
 		if(file.getPath() != null){
 			Preferences prefs = getPrefs();
-			prefs.put("baseDirectory", file.getPath());
 			
 			try {
 				prefs.put( prefs.keys().length + "", file.getPath());
@@ -52,7 +51,6 @@ public class SetBaseDirHandler extends AbstractHandler {
 				e.printStackTrace();
 			}	
 		}
-
 		return null;
 	}
 	
@@ -62,5 +60,4 @@ public class SetBaseDirHandler extends AbstractHandler {
         Preferences prefs = root.node(ConfigurationScope.SCOPE).node("de.bht.fpa.mail.s822248.fsnavigation.view1");
         return prefs;
     }
-
 }

@@ -4,23 +4,20 @@ import java.util.Observable;
 
 
 public class FileObservable extends Observable {
+	
 	private String path;
-	private  static FileObservable fileObservable=null;
+	private final static FileObservable fileObservable = new FileObservable();
 
+	private FileObservable(){}
 	
-	private FileObservable(){
-		
-	}
-	
-	public static  FileObservable getInstance(){
-		if(fileObservable == null) fileObservable= new FileObservable();
+	public static FileObservable getInstance(){
 		return fileObservable;
 	}
 
 	public void setPath(String path){
 		setChanged();
-		notifyObservers(path);
 		this.path = path;
+		notifyObservers(path);
 	}
 	
 	public String getPath(){

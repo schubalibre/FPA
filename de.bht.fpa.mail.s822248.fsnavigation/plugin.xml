@@ -25,7 +25,7 @@
       <command
             categoryId="de.bht.fpa.mail.s822248.fsnavigation.commands.category"
             id="de.bht.fpa.mail.s822248.fsnavigation.commands.sampleCommand2"
-            name="History">
+            name="Set History Directory">
       </command>
    </extension>
    <extension
@@ -59,12 +59,12 @@
             <command
                   commandId="de.bht.fpa.mail.s822248.fsnavigation.commands.sampleCommand2"
                   id="de.bht.fpa.mail.s822248.fsnavigation.sampleCommand2"
-                  style="push">
+                  mnemonic="S">
             </command>
             <command
                   commandId="de.bht.fpa.mail.s822248.fsnavigation.commands.sampleCommand"
                   id="de.bht.fpa.mail.s822248.fsnavigation.menus.sampleCommand"
-                  style="push">
+                  mnemonic="S">
             </command>
          </menu>
       </menuContribution>

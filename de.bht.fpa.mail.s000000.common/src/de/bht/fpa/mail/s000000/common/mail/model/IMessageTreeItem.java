@@ -6,6 +6,8 @@ import org.eclipse.swt.graphics.Image;
 
 public interface IMessageTreeItem {
 
+	Object file = null;
+
 	public String getText();
 
 	public Image getImage();
