@@ -5,10 +5,8 @@ import org.eclipse.ui.IPerspectiveFactory;
 
 public class Perspective implements IPerspectiveFactory {
 
-	public void createInitialLayout(IPageLayout layout) {
-		layout.addView("de.bht.fpa.mail.s822248.fsnavigation.view1",
-				IPageLayout.LEFT, 
-				0.7f, 
-				layout.getEditorArea());
-	}
+  public void createInitialLayout(IPageLayout layout) {
+    final float width = 0.7f;
+    layout.addView("de.bht.fpa.mail.s822248.fsnavigation.view1", IPageLayout.LEFT, width, layout.getEditorArea());
+  }
 }

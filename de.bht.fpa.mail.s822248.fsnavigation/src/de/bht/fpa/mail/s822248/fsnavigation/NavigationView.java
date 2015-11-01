@@ -17,61 +17,73 @@ import de.bht.fpa.mail.s000000.common.mail.model.Message;
 import de.bht.fpa.mail.s822248.fsnavigation.handlers.FileObservable;
 import de.bht.fpa.mail.s822248.fsnavigation.handlers.SetBaseDirHandler;
 
-public class NavigationView extends ViewPart implements Observer, ISelectionChangedListener{
+public class NavigationView extends ViewPart implements Observer, ISelectionChangedListener {
 
-	TreeViewer viewer;
-	@Override
-	public void createPartControl(Composite parent) {	
-		
-		Preferences prefs = SetBaseDirHandler.getPrefs();
-		
-		int lastIndex = 0;
-		
-		try {
-			lastIndex = prefs.keys().length - 1;
-		} catch (BackingStoreException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		final String baseDir = prefs.get(lastIndex + "", System.getProperty("user.home"));
-		
-		viewer = new TreeViewer(parent);
-		viewer.setContentProvider(new NsNavigationContentProvider());
-		viewer.setLabelProvider(new FsNavigationLabel());
-		viewer.addSelectionChangedListener(this);
-		viewer.setInput(new FolderItem(new File(baseDir)));
-		
-		FileObservable file = FileObservable.getInstance();
-		file.addObserver(this);
-	}
-	
-	@Override
-	public void setFocus() {}
+  private TreeViewer viewer;
 
-	@Override
-	public void update(Observable observable, Object object) {
-		String path = (String) object;
-		
-		if(path!= null) 
-			viewer.setInput(new FolderItem(new File(path)));
-	}
+  @Override
+  public void createPartControl(Composite parent) {
 
-	@Override
-	public void selectionChanged(SelectionChangedEvent event) {
-		IStructuredSelection ts = (IStructuredSelection)event.getSelection();
-		
-		if(ts.getFirstElement() instanceof FileTreeItem){
-			FileTreeItem ti = (FileTreeItem)ts.getFirstElement();
-			List<Message> msgs = ti.getMessages();
-			
-			System.out.println("Selected: " + ti.file.getName());
-			System.out.println("Selected directory: " + ti.file.getAbsolutePath());
-			System.out.println("Numbers of messages: " + msgs.size());
-			
-			for(Message mgs : msgs){
-				System.out.println(mgs.toString());
-			}
-		}
-	}
+    Preferences prefs = SetBaseDirHandler.getPrefs();
+
+    int lastIndex = 0;
+
+    try {
+      lastIndex = prefs.keys().length - 1;
+    } catch (BackingStoreException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+
+    final String baseDir = prefs.get(lastIndex + "", System.getProperty("user.home"));
+
+    viewer = new TreeViewer(parent);
+    viewer.setContentProvider(new NsNavigationContentProvider());
+    viewer.setLabelProvider(new FsNavigationLabel());
+    viewer.addSelectionChangedListener(this);
+    viewer.setInput(new FolderItem(new File(baseDir)));
+
+    FileObservable file = FileObservable.getInstance();
+    file.addObserver(this);
+  }
+
+  @Override
+  public void setFocus() {
+  }
+
+  @Override
+  public void update(Observable observable, Object object) {
+    String path = (String) object;
+    if (path != null) {
+      viewer.setInput(new FolderItem(new File(path)));
+
+      Preferences prefs = SetBaseDirHandler.getPrefs();
+
+      try {
+        prefs.put(prefs.keys().length + "", path);
+        prefs.flush();
+      } catch (BackingStoreException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+    }
+  }
+
+  @Override
+  public void selectionChanged(SelectionChangedEvent event) {
+    IStructuredSelection ts = (IStructuredSelection) event.getSelection();
+
+    if (ts.getFirstElement() instanceof FileTreeItem) {
+      FileTreeItem ti = (FileTreeItem) ts.getFirstElement();
+      List<Message> msgs = ti.getMessages();
+
+      System.out.println("Selected: " + ti.file.getName());
+      System.out.println("Selected directory: " + ti.file.getAbsolutePath());
+      System.out.println("Numbers of messages: " + msgs.size());
+
+      for (Message mgs : msgs) {
+        System.out.println(mgs.toString());
+      }
+    }
+  }
 }

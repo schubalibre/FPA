@@ -9,39 +9,37 @@ import org.eclipse.swt.graphics.Image;
 import de.bht.fpa.mail.s000000.common.mail.model.IMessageTreeItem;
 import de.bht.fpa.mail.s000000.common.mail.model.Message;
 
-
 public abstract class FileTreeItem implements IMessageTreeItem {
-	
-	protected final File file;
 
-	public FileTreeItem(File file) {
-		this.file = file;
-	}
+  protected final File file;
 
-	@Override
-	public String getText() {
-		return file.getName();
-	}
+  public FileTreeItem(File file) {
+    this.file = file;
+  }
 
-	@Override
-	public Image getImage() {
-		return null;
-	}
+  @Override
+  public String getText() {
+    return file.getName();
+  }
 
-	@Override
-	public boolean hasChildren() {
-		return false;
-	}
+  @Override
+  public Image getImage() {
+    return null;
+  }
 
-	@Override
-	public List<IMessageTreeItem> getChildren() {
-		return null;
-	}
+  @Override
+  public boolean hasChildren() {
+    return false;
+  }
 
-	@Override
-	public List<Message> getMessages() {
-		return new ArrayList<Message>();
-	}
-	
+  @Override
+  public List<IMessageTreeItem> getChildren() {
+    return null;
+  }
+
+  @Override
+  public List<Message> getMessages() {
+    return new ArrayList<Message>();
+  }
 
 }
