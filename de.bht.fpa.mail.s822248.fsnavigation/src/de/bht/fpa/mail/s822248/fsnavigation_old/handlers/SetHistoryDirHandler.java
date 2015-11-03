@@ -25,10 +25,15 @@ public class SetHistoryDirHandler extends AbstractHandler {
    */
   public Object execute(ExecutionEvent event) throws ExecutionException {
     IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
-
-    new HistoryDialog(window.getShell()).open();
+    HistoryDialog hd = new HistoryDialog(window.getShell());
+    FileObservable file = FileObservable.getInstance();
+    
+    int i = hd.open();
+    
+    if (i > -1) {
+     file.setPath(SetBaseDirHandler.getPrefs().get(i + "", System.getProperty("user.home")));
+    }
 
     return null;
   }
-
 }

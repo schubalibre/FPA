@@ -9,9 +9,8 @@ import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.IPreferencesService;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.osgi.service.prefs.Preferences;
-
 import org.eclipse.swt.widgets.DirectoryDialog;
+import org.osgi.service.prefs.Preferences;
 
 /**
  * Our sample handler extends AbstractHandler, an IHandler base class.
@@ -32,12 +31,11 @@ public class SetBaseDirHandler extends AbstractHandler {
    */
   public Object execute(ExecutionEvent event) throws ExecutionException {
     IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
-
     DirectoryDialog dlg = new DirectoryDialog(window.getShell());
-    dlg.setMessage("Choose directory for messages!!!");
+    dlg.setMessage("Choose directory for messages");
+
     FileObservable file = FileObservable.getInstance();
     file.setPath(dlg.open());
-
     return null;
   }
 
@@ -45,7 +43,6 @@ public class SetBaseDirHandler extends AbstractHandler {
     IPreferencesService service = Platform.getPreferencesService();
     IEclipsePreferences root = service.getRootNode();
     Preferences prefs = root.node(ConfigurationScope.SCOPE).node("de.bht.fpa.mail.s822248.fsnavigation.view1");
-
     return prefs;
   }
 }

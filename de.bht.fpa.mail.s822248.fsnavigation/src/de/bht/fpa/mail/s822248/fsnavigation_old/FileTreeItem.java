@@ -3,7 +3,9 @@ package de.bht.fpa.mail.s822248.fsnavigation;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.swt.graphics.Image;
+
 import de.bht.fpa.mail.s000000.common.mail.model.IMessageTreeItem;
 import de.bht.fpa.mail.s000000.common.mail.model.Message;
 
