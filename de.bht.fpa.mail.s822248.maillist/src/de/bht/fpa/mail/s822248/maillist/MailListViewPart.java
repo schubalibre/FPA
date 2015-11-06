@@ -1,10 +1,11 @@
-package de.bht.fpa.mails.s822248.maillist;
+package de.bht.fpa.mail.s822248.maillist;
 
 import java.util.Collection;
 
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.part.ViewPart;
 
 import de.bht.fpa.mail.s000000.common.mail.model.Message;
@@ -22,6 +23,8 @@ public class MailListViewPart  extends ViewPart{
 		Collection<Message> messages = new RandomTestDataProvider(50).getMessages();
 		tvb.setInput(messages);
 		this.tableViewer = tvb.getTableViewer();
+		
+		Text textfield = new Text(parent,SWT.SEARCH);
 	}
 
 	@Override
