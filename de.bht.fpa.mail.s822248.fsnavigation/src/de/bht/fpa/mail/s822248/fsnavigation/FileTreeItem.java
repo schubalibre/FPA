@@ -9,7 +9,7 @@ import de.bht.fpa.mail.s000000.common.mail.model.Message;
 
 public abstract class FileTreeItem implements IMessageTreeItem {
 
-  protected final File file;
+  public final File file;
 
   public FileTreeItem(File file) {
     this.file = file;

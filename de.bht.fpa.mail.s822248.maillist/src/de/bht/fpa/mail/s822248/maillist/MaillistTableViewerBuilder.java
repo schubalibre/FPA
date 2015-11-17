@@ -95,7 +95,7 @@ public class MaillistTableViewerBuilder extends TableViewerBuilder {
   private void createColumnRead(TableViewerBuilder tableCreator) {
     ColumnBuilder read = tableCreator.createColumn("R");
     read.bindToValue(MessageValues.READ);
-    read.setPixelWidth(24);
+    read.setPixelWidth(33);
     read.setCustomLabelProvider(new CellLabelProvider() {
 
       @Override
@@ -103,27 +103,23 @@ public class MaillistTableViewerBuilder extends TableViewerBuilder {
         Object o = cell.getElement();
         if (o instanceof Message) {
           Message msg = (Message) o;
-          String img = "icons/folder.png";
+          String img = "icons/unread.png";
           if (msg.isRead()) {
-            img = "icons/file.png";
-          } else {
-            img = "icons/folder.png";
+            img = "icons/read.png";
           }
           Image image = Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, img).createImage();
           cell.setImage(image);
         }
       }
-
     });
 
     read.build();
-
   }
 
   private void createColumnImportance(TableViewerBuilder tableCreator) {
     ColumnBuilder importance = tableCreator.createColumn("Imp");
     importance.bindToValue(MessageValues.IMPORTANCE);
-    importance.setPixelWidth(24);
+    importance.setPixelWidth(33);
     importance.setCustomLabelProvider(new CellLabelProvider() {
 
       @Override
@@ -131,11 +127,11 @@ public class MaillistTableViewerBuilder extends TableViewerBuilder {
         Object o = cell.getElement();
         if (o instanceof Message) {
           Message msg = (Message) o;
-          String img = "icons/folder.png";
+          String img = "icons/important2.png";
           if (msg.getImportance() == Importance.HIGH) {
-            img = "icons/file.png";
+            img = "icons/important3.png";
           } else if (msg.getImportance() == Importance.LOW) {
-            img = "icons/folder.png";
+            img = "icons/important1.png";
           }
           Image image = Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, img).createImage();
           cell.setImage(image);
