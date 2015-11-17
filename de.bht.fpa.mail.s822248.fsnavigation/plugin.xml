@@ -2,11 +2,6 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="org.eclipse.ui.views">
-         <view class="de.bht.fpa.mail.s822248.fsnavigation.NavigationView" id="de.bht.fpa.mail.s822248.fsnavigation.view1" name="NavigationView" restorable="true">
-      </view>
-   </extension>
-   <extension
          point="org.eclipse.ui.perspectives">
          <perspective class="de.bht.fpa.mail.s822248.fsnavigation.PerspectiveFactory1" id="de.bht.fpa.mail.s822248.fsnavigation.perspective1" name="NavPerspective">
       </perspective>
@@ -80,6 +75,28 @@
             </command>
          </toolbar>
       </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               id="de.bht.fpa.mail.s822248.fsnavigation.view1"
+               minimized="false"
+               ratio="0.3"
+               relationship="left"
+               relative="org.eclipse.ui.editorss">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="de.bht.fpa.mail.s822248.fsnavigation.NavigationView"
+            id="de.bht.fpa.mail.s822248.fsnavigation.view1"
+            name="name"
+            restorable="true">
+      </view>
    </extension>
 
 </plugin>

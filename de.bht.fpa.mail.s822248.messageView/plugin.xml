@@ -6,22 +6,13 @@
       <perspectiveExtension
             targetID="*">
          <view
-               id="de.bht.fpa.mail.s822248.maillist.view1"
+               id="de.bht.fpa.mail.s000000.common.messageview"
                minimized="false"
                ratio="0.6"
-               relationship="top"
+               relationship="bottom"
                relative="org.eclipse.ui.editorss">
          </view>
       </perspectiveExtension>
-   </extension>
-   <extension
-         point="org.eclipse.ui.views">
-      <view
-            class="de.bht.fpa.mail.s822248.maillist.MailListViewPart"
-            id="de.bht.fpa.mail.s822248.maillist.view1"
-            name="name"
-            restorable="true">
-      </view>
    </extension>
 
 </plugin>

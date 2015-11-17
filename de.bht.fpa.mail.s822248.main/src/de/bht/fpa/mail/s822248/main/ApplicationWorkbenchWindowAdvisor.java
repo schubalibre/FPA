@@ -22,7 +22,7 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
     final int height = 600;
     configurer.setInitialSize(new Point(width, height));
     configurer.setShowCoolBar(false);
-    configurer.setShowStatusLine(false);
+    configurer.setShowStatusLine(true);
     configurer.setTitle("EMailer"); //$NON-NLS-1$
   }
 }

@@ -41,6 +41,8 @@ public class NavigationView extends ViewPart implements Observer, ISelectionChan
     viewer.setInput(new FolderItem(new File(baseDir)));
     file = FileObservable.getInstance();
     file.addObserver(this);
+    
+    getSite().setSelectionProvider(viewer);
   }
 
   @Override
@@ -69,22 +71,21 @@ public class NavigationView extends ViewPart implements Observer, ISelectionChan
 
   @Override
   public void selectionChanged(SelectionChangedEvent event) {
-    if (event.getSelection() instanceof IStructuredSelection) {
-      IStructuredSelection ts = (IStructuredSelection) event.getSelection();
-      if (ts.getFirstElement() instanceof FileTreeItem) {
-
-        FileTreeItem ti = (FileTreeItem) ts.getFirstElement();
-        List<Message> messages = ti.getMessages();
-        System.out.println("Selected Directory: " + ((FileTreeItem) ti).file.getPath());
-        System.out.println("Number of Messages: " + messages.size());
-        for (Message msg : messages) {
-          System.out.println(msg.toShortString());
-
-        }
-      }
-
-    }
-
+//    if (event.getSelection() instanceof IStructuredSelection) {
+//      IStructuredSelection ts = (IStructuredSelection) event.getSelection();
+//      if (ts.getFirstElement() instanceof FileTreeItem) {
+//
+//        FileTreeItem ti = (FileTreeItem) ts.getFirstElement();
+//        List<Message> messages = ti.getMessages();
+//        System.out.println("Selected Directory: " + ((FileTreeItem) ti).file.getPath());
+//        System.out.println("Number of Messages: " + messages.size());
+//        for (Message msg : messages) {
+//          System.out.println(msg.toShortString());
+//
+//        }
+//      }
+//
+//    }
   }
 
 }
